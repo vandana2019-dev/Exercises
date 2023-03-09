@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+       // Function to determine if array is sorted
+         function isSorted() {
+             /*  var array = [1, 3, 4];*/
+            var array = [1, 3, 4, 5];
+            var count = 0;
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] < array[i+1]) {
+                    count++;
+                }
+             }
+
+             if (count == array.length - 1)
+                 return 1;
+            else return 0;
+         }
+
+        // Find largest element in an array
+        function getLargest() {
+            /*  var array = [1, 3, 4];*/
+            var array = [7, 5, 3, 8];
+            var largest = array[0];
+
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > largest) {
+                    largest = array[i];
+                }
+            }
+
+            console.log(`${largest} is largest`);
+        }
+
+        // Insert Number in the sorted array, maintaintaining the sort order
+        function insertNumber() {
+           var array = [1, 3, 4];
+            var number = 5;
+            var greaterthanLastIndex = true;
+            let i = 0;
+
+            for (i = 0; i < array.length; i++) {
+                if (number < array[i]) {
+                if (i == 0) {
+                    greaterthanLastIndex = false;
+                    console.log(`insert number ${number} before index ${i}`);
+                    array.unshift(number);
+                    // insert the number at the start of the array
+                    break;
+                }
+
+                if (i > 0)
+                    greaterthanLastIndex = false;
+                    console.log(`insert number ${number} after index ${i}`);
+                    array.splice(i, 0, number);
+                    break;
+                    // inserts at index i , 0 means do not delete the array elements
+                }
+            }
+
+            if (i == array.length && greaterthanLastIndex) {
+                console.log(`insert number ${number} after last index ${i}`);
+                array.push(number); // insert element at the end
+            }
+            console.log(array);
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+    <button onclick="isSorted()">Sorted</button>
+    <button onclick="getLargest()">Largest</button>
+    <button onclick="insertNumber()">insertNumber</button>
+</body>
+</html>
+

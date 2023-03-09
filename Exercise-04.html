@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        // In Bubble Sort, if there are n numbers then are comparsions are n-1.
+        // So, if they are 10 the comparsions are 9, for 10,000 the comparsions are 9999.
+
+        function sortNumbers() {
+            var numbers = [3, 5, 1];
+            var temp = 0;
+            for (let i = 0; i < numbers.length; i++) {
+                for (let j = i + 1; j < numbers.length; j++) {
+                    if (numbers[i] > numbers[j]) {
+                        temp = numbers[i];
+                        numbers[i] = numbers[j];
+                        numbers[j] = temp;
+
+                        console.log('not sorted');
+                    }
+                }
+            }
+
+            console.log(numbers);
+            // largest number
+            console.log(numbers[numbers.length-1]);
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="sortNumbers()">Sort Number</button>
+</body>
+</html>
+

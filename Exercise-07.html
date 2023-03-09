@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        // Find the number of items the number appears in an an sorted array
+
+        function findNumbers() {
+            var array = [1, 1, 1, 3, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6];
+            var arrayFirstIndex = [];
+            var arrayLastIndex = [];
+
+            for (i = 0; i < array.length; i++) {
+
+                arrayFirstIndex.push(array.indexOf(array[i]));
+                arrayLastIndex.push(array.lastIndexOf(array[i]));
+
+                // set the array item to lastIndexOf
+                if (array.lastIndexOf(array[i]) > array.indexOf(array[i])) {
+                    i = array.lastIndexOf(array[i]);
+                }
+            }
+
+            console.log(`array items ${array}`);
+            console.log(`array items first indexes - ${arrayFirstIndex}`);
+            console.log(`array items last indexes - ${arrayLastIndex}`);
+
+            var k = 0;
+            while (k < arrayLastIndex.length) {
+                var msg = '';
+                var item = arrayLastIndex[k];
+                var times = arrayLastIndex[k] - arrayFirstIndex[k] + 1;
+
+                if (arrayFirstIndex[k] == item)
+                    msg = `${array[item]}  ${times} - as number ${array[item]} appears 1 time`;
+                else
+                    msg = `${array[item]}  ${times} - as number ${array[item]} appears ${times} times`;
+                k++;
+                console.log(msg);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="findNumbers()">Find Numbers</button>
+</body>
+</html>
+

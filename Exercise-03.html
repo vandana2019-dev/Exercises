@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        // Binary Search with recursion
+        function binarySearch() {
+            var array = [1, 2, 2, 5];
+            var number = 2;
+            if (recursion(array, number, 0, array.length - 1))
+                console.log(`Binary Search - number ${number} found in the array ${array} using recursion`)
+            else {
+                console.log('number not found using recursion');
+            }
+
+            function recursion(array, number, start, end) {
+                // finished searching , with enter into infinite loop
+                if (start > end)
+                    return false;
+
+                var mid = Math.floor((start + end) / 2);
+
+                if (array[mid] == number)
+                    return true;
+                else if (array[mid] > number)
+                    return recursion(array, number, start, mid - 1);
+                else
+                    return recursion(array, number, mid + 1, end);
+                return false;
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btnSearch" onclick="binarySearch()">Binary Search with Recursion</button>
+</body>
+</html>

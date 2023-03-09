@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script>
+
+        /* Javascript Function 1st argument is an array, 2nd argument is an integer.
+        The function should return a list of integers.
+        The values in this returned list are the list index values that match the 2nd passed argument.
+        Eg - argument 1 is [1, 6, 1, 7] argument 2 is 1.
+        The function should return [0, 2] */
+
+        function getIndexes() {
+            var x = [1, 6, 1, 7];
+            var y = 1;
+            var z = indexValues(x, y);
+            console.log(`In array ${x}`);
+           
+            z.forEach(function (number) {
+                console.log(`the index of the number ${y} is ${number}`);   
+            });
+        }
+
+        function indexValues(x, y) {
+            var z = [];
+            for (var i = 0; i < x.length; i++) {
+                if (x[i] == y)
+                    z.push(i);
+            }
+            return z;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="getIndexes()">GetIndexes</button>
+</body>
+</html>
+
