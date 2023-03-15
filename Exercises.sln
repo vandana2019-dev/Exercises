@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9E536901-63A3-4248-B3DF-FB68382C0FAB}"
+	ProjectSection(SolutionItems) = preProject
+		Exercise-01.html = Exercise-01.html
+		Exercise-02.html = Exercise-02.html
+		Exercise-03.html = Exercise-03.html
+		Exercise-04.html = Exercise-04.html
+		Exercise-05.html = Exercise-05.html
+		Exercise-06.html = Exercise-06.html
+		Exercise-07.html = Exercise-07.html
+		Exercise-08.html = Exercise-08.html
+		Exercise-09.html = Exercise-09.html
+		Exercise-10.html = Exercise-10.html
+		Exercise-11.html = Exercise-11.html
+		Exercise-12.html = Exercise-12.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1548AF6E-19D3-49B0-9EFB-B2F52A72CB5F}
+	EndGlobalSection
+EndGlobal

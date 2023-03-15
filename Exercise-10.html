@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        // Find the number of items an array item appears in a unsorted array
+
+        function findCount() {
+
+            var array = [3, 1, 2, 1, 2, 1, 2, 1, 3 ,3];
+
+            var arrayUnique = []; // this array contains the unique items
+
+            for (i = 0; i < array.length; i++) {
+
+                if (!arrayUnique.includes(array[i])) {
+                    arrayUnique.push(array[i]);
+                }
+            }
+
+            for (var i = 0; i < arrayUnique.length; i++) {
+
+                var count = recursion(array[i], array);
+                console.log(`${array[i]} occurs ${count}`);
+            }
+            
+        }
+
+        function recursion(item, array) {
+            var count = 0;
+
+            for (var i = 0; i < array.length; i++) {
+                if (item == array[i]){
+                    count++;
+                }
+            }
+            return count;
+        }
+
+
+    </script>
+</head>
+<body>
+    <button onclick="findCount()">Find Count</button>
+</body>
+</html>
