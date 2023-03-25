@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+       // Find the number of items an array item appears in a unsorted array,
+        //using the max variable 10 having length less than or equal to 10
+        // avoiding nested loops
+
+        function find() {
+            // var array = [3, 1, 2, 1];
+            /* var array = [3, 1, 2, 1, 2];*/
+            var array = [3, 3, 3, 3, 1, 2, 1, 2, 3, 3];
+           // var array = [7, 7, 5, 7, 5];
+            var max = 10;
+            occurs_list(array,max);
+        }
+
+        function occurs_list(array, max) {
+            var l_cnt = [];
+           
+            for (var i = 0; i < max; i++) {
+                l_cnt.push(0);
+            }
+            array.forEach(number => {
+                for (var i = 0; i < max; i++) {
+                    if (number == i) {
+                        l_cnt[i]++;
+                    }
+                }
+            });
+            console.log(`${l_cnt}`);
+
+            for (var i = 0; i < 10; i++) {
+                console.log(`${i} occurs ${l_cnt[i]} times`);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <button onclick="find()">Find Count</button>
+</body>
+</html>
