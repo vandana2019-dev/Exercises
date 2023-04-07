@@ -24,18 +24,30 @@
             for (var i = 0; i < max; i++) {
                 l_cnt.push(0);
             }
-            array.forEach(number => {
-                for (var i = 0; i < max; i++) {
-                    if (number == i) {
-                        l_cnt[i]++;
-                    }
-                }
-            });
-            console.log(`${l_cnt}`);
+        
+       
+          //array.forEach(number => {
+          //      for (var i = 0; i < max; i++) {
+          //          if (number == i) {
+          //              l_cnt[i]++;
+          //          }
+          //      }
+          //  });
+          //  console.log(`${l_cnt}`);
+ 
+          // for (var i = 0; i < 10; i++) {
+          //      console.log(`${i} occurs ${l_cnt[i]} times`);
+          //  }
 
-            for (var i = 0; i < 10; i++) {
+           array.forEach(x => { l_cnt[x]++; });
+
+           console.log(array);
+           
+           for (var i = 0; i < 10; i++) {
                 console.log(`${i} occurs ${l_cnt[i]} times`);
             }
+
+          
         }
         
     </script>
