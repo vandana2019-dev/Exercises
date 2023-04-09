@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+<script>
+    // filtering data by using anonymous function - behaviour is dynamic in nature
+    function filterdata() {
+        var l_a = [2, 3, 1, 11, 123, 78];
+        var l_num = [10, 20, 70, 80, 90, 100];
+
+        var l_result = filter1(l_a);
+        console.log('filter numbers greater than 10 using normal functions');
+        console.log(l_result);
+
+        l_result = filter2(l_a, gt10);
+        console.log('filter numbers greater than 10 by passing functions');
+        console.log(l_result);
+
+        l_result = filter2(l_a, function (x) { return x > 10 });
+        console.log('filter numbers greater than 10 by using anonymous function');
+        console.log(l_result);
+
+        var limit = 10;
+        l_result = filter2(l_a, function (x) { return x > limit });
+        console.log('filter numbers greater than 10 by using anonymous function by removing hard coded values');
+        console.log(l_result);
+
+        var limit = 10;
+        var anon_function = function (x) { return x > limit };
+        l_result = filter2(l_a, anon_function);
+        console.log('filter numbers greater than 10 by passing anonymous function (as parameter) by removing hard coded values');
+        console.log(l_result);
+
+        l_result = filter_numrange(l_num);
+        console.log('filter numbers >= 10 and <= 80 using normal functions');
+        console.log(l_result);
+
+        l_result = filter2(l_num, numberrange);
+        console.log('filter numbers >= 10 and <= 80 by passing functions');
+        console.log(l_result);
+
+        l_result = filter2(l_num, function (x) { return x >= 10 && x <= 80; });
+        console.log('filter numbers  >= 10 and <= 80 by using anonymous function');
+        console.log(l_result);
+
+        var anon_function = function (x) { return x >= 10 && x <= 80; };
+        l_result = filter2(l_num, anon_function);
+        console.log('filter numbers  >= 10 and <= 80 by passing anonymous function (as parameter)');
+        console.log(l_result);
+    }
+
+    function filter1(l_a) {
+        var l_result = [];
+
+        for (var y of l_a) {
+            if (y > 10) {
+                l_result.push(y);
+            }
+        }
+        return l_result;
+    }
+
+    function gt10(y) {
+        if (y > 10)
+            return 1;
+        else
+            return 0;
+    }
+
+    function filter2(l_a, fn) {
+        var l_result = [];
+
+        for (var y of l_a) {
+            if (fn(y) > 0)
+                l_result.push(y);
+        }
+        return l_result;
+    }
+
+
+    function filter_numrange(l_num) {
+        var l_result = [];
+        for (var y of l_num) {
+            if (y >= 10 && y <= 80)
+                l_result.push(y);
+        }
+        return l_result;
+    }
+
+    function numberrange(y) {
+        if (y >= 10 && y <= 80)
+            return 1;
+        else
+            return 0;
+    }
+</script>
+</head>
+
+<body>
+    <button id="btnSearch" onclick="filterdata()">Filter Numbers</button>
+
+</body>
+</html>
