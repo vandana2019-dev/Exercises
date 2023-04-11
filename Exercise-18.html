@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+         // by using anonymous function - loop through a list of integers, square them and output when that is bigger than 100
+        function filterdata() {
+            var l_a = [2, 3, 1, 11, 15, 20];
+            var l_result = square1(l_a);
+            console.log('square a number is a list and output when that is bigger than 100 using normal function');
+            console.log(l_result);
+
+            l_result = square2(l_a, gt100);
+            console.log('square a number is a list and output when that is bigger than 100 by passing functions');
+            console.log(l_result);
+
+            l_result = square2(l_a, function (x) { return x * x > 100 });
+            console.log('square a number is a list and output when that is bigger than 100 by using anonymous function');
+            console.log(l_result);
+
+            var limit = 100;
+            l_result = square2(l_a, function (x) { return x * x > limit });
+            console.log('square a number is a list and output when that is bigger than 100 by using anonymous function by removing hardcoded-values');
+            console.log(l_result);
+
+            var limit = 100;
+            var anon_function = function (x) { return x * x > limit };
+            l_result = square2(l_a, anon_function);
+            console.log('square a number is a list and output when that is bigger than 100 by passing anonymous function (as parameter) by removing hard coded values');
+            console.log(l_result);
+        }
+
+        function square1(l_a) {
+            var l_result = [];
+
+            for (var y of l_a) {
+                if (y*y > 100) {
+                    l_result.push(y * y);
+                }
+            }
+            return l_result;
+        }
+
+        function gt100(y) {
+            if (y * y > 100)
+                return 1;
+            else
+                return 0;
+        }
+        function square2(l_a, fn) {
+            var l_result = [];
+            for (var y of l_a) {
+                if (fn(y) > 0)
+                    l_result.push(y * y);
+            }
+            return l_result;
+        }
+      
+
+    </script>
+</head>
+<body>
+    <button id="btnSearch" onclick="filterdata()">Filter Numbers</button>
+</body>
+</html>
