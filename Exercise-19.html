@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+    // find largest number using closure (anonymous function)
+    function filterdata() {
+        var l_a = [1, 2, 3, 8, 5];
+        var largest = 0;
+
+        var findLargest = function () {
+            for (var item of l_a) {
+                if (item > largest)
+                    largest = item;
+
+            }
+            return largest;
+        }
+        return {
+            findLargest
+        }
+    }
+
+    var x = filterdata();
+    console.log(x.findLargest());
+     
+
+    </script>
+</head>
+<body>
+
+</body>
+
+</html>
