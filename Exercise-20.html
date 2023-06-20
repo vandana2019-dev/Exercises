@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        //  Given a list of lists, passed as argument.
+        // Write a function to return a list with averages of each list.
+        function operation() {
+            var ll = [[1, 6], [3, 7], [5, 8]];
+            var averagelist = [];
+            averagelist = doaverage(ll, averagelist);
+            console.log(averagelist);
+        }
+        function doaverage(ll, averagelist) {
+            for (var list of ll) {
+                console.log(list);
+                var total = 0;
+                for (var listitem of list) {
+                    total += listitem;
+                }
+                averagelist.push(total / list.length);
+            }
+           
+            return averagelist;
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="operation()">Average of list</button>
+</body>
+</html>

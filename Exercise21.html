@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function matrixoperation() {
+            var llmat1 = [[1, 2], [3, 4]];
+            var llmat2 = [[5, 6], [7, 8]];
+            // 1 * 5 + 2 * 7 1 * 6 + 2 * 8
+            // 3 * 5 + 4 * 7 3 * 6 + 4 * 8
+            var dotproduct1 = (llmat1[0][0] * llmat2[0][0] + llmat1[0][1] * llmat2[1][0]);
+            var dot1 = `${llmat1[0][0]} * ${llmat2[0][0]} + ${llmat1[0][1]} * ${llmat2[1][0]} = ${dotproduct1}`;
+            console.log(dot1);
+
+            var dotproduct2 = (llmat1[0][0] * llmat2[0][1] + llmat1[0][1] * llmat2[1][1]);
+            var dot2 = `${llmat1[0][0]} * ${llmat2[0][1]} + ${llmat1[0][1]} * ${llmat2[1][1]} = ${dotproduct2}`;
+            console.log(dot2);
+
+            var dotproduct3 = (llmat1[1][0] * llmat2[0][0] + llmat1[1][1] * llmat2[1][0]);
+            var dot3 = `${llmat1[1][0]} * ${llmat2[0][0]} + ${llmat1[1][1]} * ${llmat2[1][0]} = ${dotproduct3}`;
+            console.log(dot3);
+
+            var dotproduct4 = (llmat1[1][0] * llmat2[0][1] + llmat1[1][1] * llmat2[1][1]);
+            var dot4 = `${llmat1[1][0]} * ${llmat2[0][1]} + ${llmat1[1][1]} * ${llmat2[1][1]} = ${dotproduct4}`;
+            console.log(dot4);
+
+            var mat1 = [];
+            for (var i = 0; i < 2; i++) {
+                for (var j = 0; j < 2; j++) {
+                    mat1.push(llmat1[i][j]);
+                }
+            }
+            console.log(mat1);
+
+            var mat2= [];
+            for (var i = 0; i < 2; i++) {
+                for (var j = 0; j < 2; j++) {
+                    mat2.push(llmat2[j][i]); // we need the transpose of the matrix
+                }
+            }
+            console.log(mat2);
+
+            //var temp = [];
+            //temp.push(mat1[0] * mat2[0]); 
+            //temp.push(mat1[0] * mat2[2]); 
+            //console.log(temp);
+
+            //var temp2 = [];
+            //temp2.push(mat1[1] * mat2[1]);
+            //temp2.push(mat1[1] * mat2[3]); 
+            //console.log(temp2);
+
+            var tempeven = []
+            var tempodd = [];
+            for (var i = 0; i < 4; j++) {
+                for (var j = 0; j < 4; j++) {
+                    if (i % 2 == 0 && j % 2 == 0) {
+                        tempeven.push(mat1[i] * mat2[j]);
+                    }
+                    else {
+                        tempodd.push(mat1[i] * mat2[j]);
+                    }
+                }
+            }
+
+            console.log(tempeven);
+            console.log(tempodd);
+
+            //var prod1 = [];
+            //for (var i = 0; i < tempeven.length; i++) {
+            //    prod1.push(tempeven[i] * tempodd[i]);
+            //}
+
+            //console.log(prod1);
+            //var tempeven1 = []
+            //var tempodd1 = [];
+            //var i = 1;
+            //for (var j = 0; j < 4; j++) {
+            //    if (j % 2 == 1) {
+            //        tempodd1.push(mat1[i] * mat2[j]);
+            //    }
+            //}
+
+            //console.log(tempodd1);
+
+            //var i = 2;
+            //var tempeven2 = [];
+            //for (var j = 0; j < 4; j++) {
+            //    if (j % 2 == 0) {
+            //        tempeven2.push(mat1[i] * mat2[j]);
+            //        //tempeven.push(i + "" +j);
+            //    }
+            //}
+
+            //console.log(tempeven2);
+
+            //var i = 3;
+            //var tempodd2 = [];
+            //for (var j = 0; j < 4; j++) {
+            //    if (j % 2 == 1) {
+            //        tempodd2.push(mat1[i] * mat2[j]);
+            //        //tempeven.push(i + "" +j);
+            //    }
+            //}
+
+            //console.log(tempodd2);
+
+            //var dotproduct1mat1 = mat1[0] * mat2[0] + mat1[1] * mat2[1];
+            //var dotmat1 = `${mat1[0]} * ${mat2[0]} + ${mat1[1]} * ${mat2[1]} = ${dotproduct1mat1}`;
+            //console.log(dotmat1);
+
+            //var dotproduct1mat2 = mat1[0] * mat2[2] + mat1[1] * mat2[3];
+            //var dotmat2 = `${mat1[0]} * ${mat2[2]} + ${mat1[1]} * ${mat2[3]} = ${dotproduct1mat2}`;
+            //console.log(dotmat2);
+
+            //var dotproduct1mat3 = mat1[2] * mat2[0] + mat1[3] * mat2[1];
+            //var dotmat3 = `${mat1[2]} * ${mat2[0]} + ${mat1[3]} * ${mat2[1]} = ${dotproduct1mat3}`;
+            //console.log(dotmat3);
+
+            //var dotproduct1mat4 = mat1[2] * mat2[2] + mat1[3] * mat2[3];
+            //var dotmat4 = `${mat1[2]} * ${mat2[2]} + ${mat1[3]} * ${mat2[3]} = ${dotproduct1mat4}`;
+            //console.log(dotmat4);
+
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="matrixoperation()">Matrix</button>
+</body>
+</html>
